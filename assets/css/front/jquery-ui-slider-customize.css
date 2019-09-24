@@ -1,0 +1,98 @@
+
+/* Customize slider */
+.ui-slider {
+	height: 4px;
+	margin: 10px 12px 0 0;
+	width: 200px;
+	min-width: 200px;
+	background-color: #a9acb1;
+	border-radius: 15px;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: 		inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.ui-slider-horizontal .ui-slider-range-min {
+  background-color: #FEAA37;
+  border-radius: 15px;
+  display: block;
+  height: 100%;
+  width: 0;
+
+}
+
+.ui-slider .ui-slider-handle:focus,
+.ui-slider .ui-slider-handle {
+  background-color: #fff;
+  border-radius: 25px;
+  cursor: move;
+  height: 25px;
+  left: 0;
+  top: -13px;
+  position: absolute;
+  width: 25px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+
+}
+.ui-slider .ui-slider-handle:focus {
+	outline-style: none;
+}
+
+.noUi-target, .noUi-origin {
+	border-radius:0;
+}
+.noUi-handle {
+	cursor:pointer;
+}
+.noUi-connect {
+	background:#FEAA37;
+}
+.noUi-connect {
+	border:0;
+	-webkit-box-shadow: none;
+	   -moz-box-shadow: none;
+		    box-shadow: none;
+}
+.noUi-target.noUi-connect {
+	border:0;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+	   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+		    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+}
+.noUi-background {
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+	   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+	        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+}
+.noUi-horizontal {
+    height: 9px;
+	direction:ltr;
+}
+.noUi-horizontal .noUi-handle {
+	height:20px;
+	left: -10px;
+    top: -7px;
+    width: 20px;
+}
+.noUi-handle:before, .noUi-handle:after {
+    background:#FEAA37;
+    height: 7px;
+    left: 7px;
+    top: 5px;
+}
+.noUi-handle:after {
+    left: 10px;
+}
+
+/* Overrides for right-to-left sliders. */
+.ui-slider-horizontal.ui-slider-rtl .ui-slider-range-min {
+	left: auto; right: 0;
+}
+.ui-slider-horizontal.ui-slider-rtl .ui-slider-range-max {
+	left: 0; right: auto;
+}
+.ui-slider-vertical.ui-slider-rtl .ui-slider-range-min {
+	top: 0; bottom: auto;
+}
+.ui-slider-vertical.ui-slider-rtl .ui-slider-range-max {
+	top: auto; bottom: 0;
+}

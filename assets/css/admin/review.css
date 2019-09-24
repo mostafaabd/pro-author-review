@@ -1,0 +1,129 @@
+@import '../front/jquery-ui-slider.css';
+@import 'jquery-ui-slider-customize.css';
+.loading{
+	min-height: 150px;
+	background-color: transparent;
+	background-image: url("../../images/ajax-loader.gif");
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";       /* IE 8 */
+	filter: alpha(opacity=50);  /* IE 5-7 */
+	-moz-opacity: 0.5;          /* Netscape */
+	-khtml-opacity: 0.5;        /* Safari 1.x */
+	opacity: 0.5;               /* Good browsers */
+	background-repeat: no-repeat;
+    background-position: center top;
+    z-index: 999999;
+}
+.loading::after {
+	content:'';
+	clear:both;
+	display: table;
+}
+span.first {
+	min-width: 150px;
+	vertical-align: top;
+}
+span.second,
+span.first {
+	
+    display: inline-block;
+}
+.select2-selection.select2-selection--single,
+.eye-wp-review-box select, .review-field input[type="text"] {
+	min-width: 300px;
+}
+.review-field {
+	padding: 12px 0;
+    border-top: 1px solid #EEEEEE;
+}
+.review-field:first-child {
+	border-top:0;
+}
+.criteria-fields .review-field {
+	 border-top: 1px solid #EEEEEE;
+}
+.pro-wp-review-box select {
+    color: #555555;
+    font-size: 12px;
+	
+	padding: 5px 58px 5px 5px;
+    height: 28px;
+    line-height: 17px;
+}
+.rating-review-item {
+	padding: 0px;
+	background: #FaFaFa;
+	border: 1px solid #DDD;
+}
+
+ul.custom_repeatable {
+	padding: 15px;
+}
+
+ul.custom_repeatable li {
+	padding: 15px;
+	background: #FFF;
+	border: 1px solid #CCC !important;
+}
+.label-criteria {
+	/*min-width: 120px;*/
+	margin: 0 8px;
+	display: inline-block;
+}
+.criteria-value {
+	width: 35px;
+	margin: 0 8px;
+	display:inline-block;
+}
+.pro-author-review-box ul li input[type="text"] {
+	max-width: 150px;
+}
+.pro-author-review-box ul li input[type="text"]:last-child {
+	margin-right: 8px;
+}
+.wrap-values {
+	margin-top: 20px;
+}
+.wrap-values span:first-child {
+	margin-left: 85px;
+}
+.wrap-total-criteria {
+	padding: 0 15px;
+	margin-bottom: 12px;
+	background: #f5f5f5;
+	border-bottom: 1px solid #ddd;
+}
+.wrap-total-criteria .criteria-title {
+	float: left;
+	width: 30%;
+}
+.wrap-total-criteria .total-value {
+	text-align: right;
+	float: left;
+	width: 70%;
+	margin-top: 18px;
+}
+.wrap-total-criteria .total-value div {
+	padding-left: 5px;
+	display: inline-block;
+}
+.wrap-total-criteria::after {
+	content: '';
+	clear: both;
+	display: table;
+}
+.pro-hidden {
+	display: none !important;
+}
+.info {
+	margin: 15px 15px 0;
+	padding: 0 15px 0;
+	background: #FFF;
+	border: 1px solid #CCC;
+}
+.info strong {
+	color: red;
+	
+}
+input.percent-value {
+	width: 50px;
+}

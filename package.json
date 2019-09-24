@@ -1,0 +1,38 @@
+{
+  "name": "pro-author-review",
+  "version": "1.0.0",
+  "description": "Pro Author Review the WordPress plugin allow author to review a post and users to rate it",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/register": "^7.6.0",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-wp-pot": "^2.3.5",
+    "gulp-zip": "^5.0.0",
+    "webpack-stream": "^5.2.1",
+    "yargs": "^14.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "author review",
+    "users rate"
+  ],
+  "author": "Mostafa Abdallah",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": ""
+}

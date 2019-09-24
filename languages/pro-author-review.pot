@@ -1,0 +1,363 @@
+# Copyright (C) 2019 pro-author-review
+# This file is distributed under the same license as the pro-author-review package.
+msgid ""
+msgstr ""
+"Project-Id-Version: pro-author-review\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/class-pro-author-review.php:56
+msgctxt "post type general name"
+msgid "Review"
+msgstr ""
+
+#: includes/class-pro-author-review.php:57
+msgctxt "post type singular name"
+msgid "Review"
+msgstr ""
+
+#: includes/class-pro-author-review.php:58
+msgctxt "admin menu"
+msgid "Reviews"
+msgstr ""
+
+#: includes/class-pro-author-review.php:59
+msgctxt "add new on admin bar"
+msgid "Review"
+msgstr ""
+
+#: includes/class-pro-author-review.php:60
+msgctxt "Review"
+msgid "Add new"
+msgstr ""
+
+#: includes/class-pro-author-review.php:61
+msgid "Add new review"
+msgstr ""
+
+#: includes/class-pro-author-review.php:62
+msgid "New review"
+msgstr ""
+
+#: includes/class-pro-author-review.php:63
+msgid "Edit review"
+msgstr ""
+
+#: includes/class-pro-author-review.php:64
+msgid "View review"
+msgstr ""
+
+#: includes/class-pro-author-review.php:65
+msgid "All reviews"
+msgstr ""
+
+#: includes/class-pro-author-review.php:66
+msgid "Search reviews"
+msgstr ""
+
+#: includes/class-pro-author-review.php:67
+msgid "Parent reviews:"
+msgstr ""
+
+#: includes/class-pro-author-review.php:68
+msgid "No reviews found."
+msgstr ""
+
+#: includes/class-pro-author-review.php:69
+msgid "No reviews found in trash."
+msgstr ""
+
+#: includes/class-pro-author-review.php:131
+msgid "Top"
+msgstr ""
+
+#: includes/class-pro-author-review.php:135
+msgid "Bottom"
+msgstr ""
+
+#: includes/class-pro-author-review.php:139
+msgid "Use shortcode or function"
+msgstr ""
+
+#: includes/class-pro-author-review.php:157, includes/admin/class-pro-author-review-metabox.php:490, includes/admin/class-pro-author-review-metabox.php:606, includes/admin/class-pro-author-review-metabox.php:608
+msgid "Star"
+msgstr ""
+
+#: includes/class-pro-author-review.php:161, includes/admin/class-pro-author-review-metabox.php:486, includes/admin/class-pro-author-review-metabox.php:606, includes/admin/class-pro-author-review-metabox.php:608
+msgid "Point"
+msgstr ""
+
+#: includes/class-pro-author-review.php:165
+msgid "percent"
+msgstr ""
+
+#: includes/class-pro-author-review.php:183
+msgid "Author review only"
+msgstr ""
+
+#: includes/class-pro-author-review.php:187
+msgid "Users rate only"
+msgstr ""
+
+#: includes/class-pro-author-review.php:191, includes/admin/class-pro-author-review-metabox.php:183, includes/admin/class-pro-author-review-metabox.php:308
+msgid "Author review and users rate"
+msgstr ""
+
+#: includes/class-pro-users-rate.php:52, includes/class-pro-users-rate.php:65, includes/class-pro-users-rate.php:78
+msgid "Your vote could not be added"
+msgstr ""
+
+#. translators: %s: Number of users rating
+#: includes/class-pro-users-rate.php:115
+msgid "%s vote"
+msgid_plural "%s votes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-pro-users-rate.php:121
+msgid "You rate this post before."
+msgstr ""
+
+#: includes/class-pro-users-rate.php:293
+msgid "Thank you to rate this post"
+msgstr ""
+
+#: includes/class-pro-users-rate.php:297
+msgid "Only logged in user can rate this post"
+msgstr ""
+
+#: includes/functions-template.php:30, includes/functions-template.php:133
+msgid "Author Review"
+msgstr ""
+
+#: includes/functions-template.php:33, includes/admin/class-pro-author-review-metabox.php:181, includes/admin/class-pro-author-review-metabox.php:312, includes/widgets/class-pro-author-reviews-widget.php:180
+msgid "Users rate"
+msgstr ""
+
+#: includes/functions-template.php:34, templates/users-rate-template.php:22, templates/users-rate-template.php:106
+msgid "Rate It"
+msgstr ""
+
+#. translators: %s: Average star rating value.
+#. translators: %s:Average rating
+#: includes/functions-template.php:94, templates/review-widget.php:45
+msgid "Rated %s out of 5"
+msgstr ""
+
+#. translators: %s: Number of users rating
+#: includes/functions-template.php:153
+msgid "%d vote"
+msgid_plural "%d votes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/functions-template.php:155
+msgid "Not rated yet."
+msgstr ""
+
+#: includes/functions-template.php:159
+msgid "Users Rate"
+msgstr ""
+
+#: includes/functions-template.php:166
+msgid "Summary:"
+msgstr ""
+
+#. translators: %s: Average rating value.
+#: includes/functions-template.php:229
+msgid "Rated %d out of 5"
+msgstr ""
+
+#. translators: %s: Average rating value.
+#: includes/functions-template.php:238
+msgid "Rated %s out of 10"
+msgstr ""
+
+#. translators: %s: Average rating value.
+#: includes/functions-template.php:247
+msgid "Rated %d"
+msgstr ""
+
+#: templates/users-rate-template.php:21
+msgid "Be the first and rate this post"
+msgstr ""
+
+#: templates/users-rate-template.php:116
+msgid "Only logged in users can rate this post."
+msgstr ""
+
+#. translators: %s: The message display when a user doesn't login
+#: templates/users-rate-template.php:121
+msgid "You must be %1$slogged in%2$s to rate this post."
+msgstr ""
+
+#: templates/users-rate-template.php:133
+msgid "You rated this post before."
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:54
+msgid "Review templates"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:65
+msgid "Review options"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:130
+msgid "CSS class"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:137
+msgid "Important"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:137
+msgid "Slug name must be in English only and Unique in this template, feel free to repeat it in other template"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:179, includes/admin/class-pro-author-review-metabox.php:310
+msgid "Author only"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:227
+msgid "Review this post"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:233
+msgid "Important: if you leave has review field unchecked the review data deleted when you save post."
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:236
+msgid "Review template"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:239
+msgid "Select template ..."
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:286, includes/admin/class-pro-author-review-metabox.php:342
+msgid "Please add review template"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:477
+msgid "Criteria fields"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:480
+msgid "Total review"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:482, includes/admin/class-pro-author-review-metabox.php:606, includes/admin/class-pro-author-review-metabox.php:608
+msgid "Percent"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:506
+msgid "Who can review ?"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:510
+msgid "Review position"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:522
+msgid "Review type"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:535
+msgid "Review title"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:544
+msgid "Text under total review"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:553
+msgid "Affiliate text"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:562
+msgid "Affiliate link"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:571
+msgid "Review description"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:580
+msgid "Pros"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:589
+msgid "Cons"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:622
+msgid "Criteria"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-metabox.php:628
+msgid "Slug"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-options.php:27
+msgid "Author review settings"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-options.php:28
+msgid "Settings"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-options.php:42
+msgid "Author Review Options"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-options.php:126
+msgid "Post type"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-options.php:127
+msgid "Choose post type to display author review metabox"
+msgstr ""
+
+#: includes/admin/class-pro-author-review-options.php:135
+msgid "Login page URL"
+msgstr ""
+
+#: includes/widgets/class-pro-author-reviews-widget.php:21, includes/widgets/class-pro-author-reviews-widget.php:24
+msgid "Author reviews"
+msgstr ""
+
+#: includes/widgets/class-pro-author-reviews-widget.php:161
+msgid "title:"
+msgstr ""
+
+#: includes/widgets/class-pro-author-reviews-widget.php:168
+msgid "Number of posts:"
+msgstr ""
+
+#: includes/widgets/class-pro-author-reviews-widget.php:176
+msgid "Who can review posts:"
+msgstr ""
+
+#: includes/widgets/class-pro-author-reviews-widget.php:179
+msgid "Author review"
+msgstr ""
+
+#: includes/widgets/class-pro-author-reviews-widget.php:188
+msgid "Post type:"
+msgstr ""
+
+#: includes/widgets/class-pro-author-reviews-widget.php:197
+msgid "Filter by category:"
+msgstr ""
+
+#: includes/widgets/class-pro-author-reviews-widget.php:198
+msgid "You can select one or more categories"
+msgstr ""
