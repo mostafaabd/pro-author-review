@@ -101,6 +101,7 @@ export const compress = () => {
     "!gulpfile.babel.js",
     "!package.json",
     "!package-lock.json",
+    "!README.md",
     ])
     .pipe(zip(`${info.name}.zip`))
     .pipe(dest('../'));

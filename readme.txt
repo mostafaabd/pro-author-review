@@ -13,7 +13,7 @@ Pro Author Review plugin helps a post author to add a review to their posts usin
 == Description ==
 The plugin concern about saving your time, you can create a review template and using this template inside many posts, so you don\\\'t need to repeat criteria for each post.
 
-See [Demo](http://demo.mostafaa.net/authorreview/ \"Pro author review demo\")
+See [Demo](http://demo.mostafaa.net/authorreview/)
 
 ==== Features ====
 - Support RTL Language.
@@ -35,6 +35,11 @@ See [Demo](http://demo.mostafaa.net/authorreview/ \"Pro author review demo\")
 4- Add/Edit a post and select review this post then select review template, add value to criteria and fill other fields.
 5- Save/Update a post.
 
+=== Screenshots ===
+1. Add a review template.
+2- Add/Edit post and Select a review template.
+3- An author review on the front.
+
 
 == Changelog ==
-1.0.0
+1.0
