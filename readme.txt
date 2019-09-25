@@ -11,6 +11,8 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Pro Author Review plugin helps a post author to add a review to their posts using review criterias with separate ratings, and allow logged in users to rate posts.
 
 == Description ==
+Pro Author Review plugin helps a post author to add a review to their posts using review criterias with separate ratings, and allow logged in users to rate posts.
+
 The plugin concern about saving your time, you can create a review template and using this template inside many posts, so you don\\\'t need to repeat criteria for each post.
 
 See [Demo](http://demo.mostafaa.net/authorreview/)
