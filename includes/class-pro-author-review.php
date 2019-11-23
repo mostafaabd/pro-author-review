@@ -518,6 +518,4 @@ if ( ! class_exists( 'Pro_Author_Review' ) ) {
 		}
 	}
 	Pro_Author_Review::register();
-	//global $pra_author_review;
-	//$pra_author_review = new Pro_Author_Review();
 }
