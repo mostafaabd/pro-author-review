@@ -27,11 +27,11 @@ along with Pro Author Review. If not, see https://www.gnu.org/licenses/gpl-2.0.h
 // exit if file is called directly
 defined( 'ABSPATH' ) || exit;
 
-define( 'PRO_AR_VERSION', '1.0' );
-define( 'PRO_AR_DB_VERSION', '1.0' );
+const PRO_AR_VERSION          = '1.0';
+const PRO_AR_DB_VERSION       = '1.0';
+const PRO_AR_USERS_RATE_TABLE = 'pro_user_rates';
 define( 'PRO_AR_URI', plugins_url( '', __FILE__ ) );
 define( 'PRO_AR_DIR', plugin_dir_path( __FILE__ ) );
-define( 'PRO_AR_USERS_RATE_TABLE', 'pro_user_rates' );
 
 require_once( 'includes/core-functions.php' );
 require_once( 'includes/class-pro-author-review.php' );
