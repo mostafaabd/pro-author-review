@@ -13,7 +13,7 @@ if ( ! class_exists( 'Pro_Author_Review_API' ) ) {
 		function add_author_review_api() {
 
 			$options    = par_wp_review_option();
-			$post_types = isset( $options['post_type'] ) ? $options['post_type'] : array( 'post' );
+			$post_types = $options['post_type'] ?? array( 'post' );
 
 			register_rest_field(
 				$post_types,

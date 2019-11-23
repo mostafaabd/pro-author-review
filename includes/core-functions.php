@@ -59,13 +59,13 @@ if ( ! function_exists( 'par_get_post_review_type' ) ) {
 		}
 
 		$review_data = get_post_meta( $post_id, '_par_post_review_data', true );
-		$review_tpl  = isset( $review_data['tpl'] ) ? $review_data['tpl'] : '';
+		$review_tpl  = $review_data['tpl'] ?? '';
 
 		if ( ! empty( $review_tpl ) ) {
 			$tpl_review_meta = get_post_meta( $review_tpl, '_par_post_review_data', true );
-			$review_type     = isset( $tpl_review_meta['type'] ) ? $tpl_review_meta['type'] : '';
+			$review_type     = $tpl_review_meta['type'] ?? '';
 		} else {
-			$review_type = isset( $review_data['type'] ) ? $review_data['type'] : '';
+			$review_type = $review_data['type'] ?? '';
 		}
 
 		return $review_type;

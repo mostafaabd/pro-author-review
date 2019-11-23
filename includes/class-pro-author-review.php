@@ -235,11 +235,11 @@ if ( ! class_exists( 'Pro_Author_Review' ) ) {
 
 			$position    = '';
 			$review_meta = get_post_meta( $post_id, self::REVIEW_KEY, true );
-			$post_tpl    = isset( $review_meta['tpl'] ) ? $review_meta['tpl'] : '';
+			$post_tpl    = $review_meta['tpl'] ?? '';
 
 			if ( ! empty( $post_tpl ) ) {
 				$tpl_review_meta = get_post_meta( $post_tpl, self::REVIEW_KEY, true );
-				$position        = isset( $tpl_review_meta['position'] ) ? $tpl_review_meta['position'] : '';
+				$position        = $tpl_review_meta['position'] ?? '';
 			}
 
 			if ( ! empty( $review_meta ) && ! empty( $position ) ) {
@@ -287,28 +287,28 @@ if ( ! class_exists( 'Pro_Author_Review' ) ) {
 
 			$author_review_meta     = get_post_meta( $post_id, self::REVIEW_KEY, true );
 			$author_criteria_fields = get_post_meta( $post_id, self::CRITERIA_FIELDS, true );
-			$post_tpl               = isset( $author_review_meta['tpl'] ) ? $author_review_meta['tpl'] : '';
-			$review_title           = isset( $author_review_meta['title'] ) ? $author_review_meta['title'] : '';
-			$txt_under_total        = isset( $author_review_meta['text_under_total'] ) ? $author_review_meta['text_under_total'] : '';
-			$description            = isset( $author_review_meta['description'] ) ? $author_review_meta['description'] : '';
-			$pros                   = isset( $author_review_meta['pros'] ) ? $author_review_meta['pros'] : array();
-			$cons                   = isset( $author_review_meta['cons'] ) ? $author_review_meta['cons'] : array();
-			$aff_text               = isset( $author_review_meta['aff_txt'] ) ? $author_review_meta['aff_txt'] : '';
-			$aff_url                = isset( $author_review_meta['aff_url'] ) ? $author_review_meta['aff_url'] : '';
+			$post_tpl               = $author_review_meta['tpl'] ?? '';
+			$review_title           = $author_review_meta['title'] ?? '';
+			$txt_under_total        = $author_review_meta['text_under_total'] ?? '';
+			$description            = $author_review_meta['description'] ?? '';
+			$pros                   = $author_review_meta['pros'] ?? array();
+			$cons                   = $author_review_meta['cons'] ?? array();
+			$aff_text               = $author_review_meta['aff_txt'] ?? '';
+			$aff_url                = $author_review_meta['aff_url'] ?? '';
 
 			if ( ! empty( $post_tpl ) ) {
 				$tpl_review_meta = get_post_meta( $post_tpl, self::REVIEW_KEY, true );
-				$review_type     = isset( $tpl_review_meta['type'] ) ? ( $tpl_review_meta['type'] ) : 'percent';
-				$who_can_review  = isset( $tpl_review_meta['who_can_review'] ) ? $tpl_review_meta['who_can_review'] : 'authoronly';
-				$position        = isset( $tpl_review_meta['position'] ) ? $tpl_review_meta['position'] : '';
-				$css_class       = isset( $tpl_review_meta['css_class'] ) ? $tpl_review_meta['css_class'] : '';
+				$review_type     = $tpl_review_meta['type'] ?? 'percent';
+				$who_can_review  = $tpl_review_meta['who_can_review'] ?? 'authoronly';
+				$position        = $tpl_review_meta['position'] ?? '';
+				$css_class       = $tpl_review_meta['css_class'] ?? '';
 			} else {
 				// Get these values from post if custom post review delete
 				$tpl_review_meta = get_post_meta( $post_id, self::REVIEW_KEY, true );
-				$review_type     = isset( $tpl_review_meta['type'] ) ? ( $tpl_review_meta['type'] ) : 'percent';
-				$who_can_review  = isset( $tpl_review_meta['who_can_review'] ) ? $tpl_review_meta['who_can_review'] : 'author';
-				$position        = isset( $tpl_review_meta['position'] ) ? $tpl_review_meta['position'] : '';
-				$css_class       = isset( $tpl_review_meta['css_class'] ) ? $tpl_review_meta['css_class'] : '';
+				$review_type     = $tpl_review_meta['type'] ?? 'percent';
+				$who_can_review  = $tpl_review_meta['who_can_review'] ?? 'author';
+				$position        = $tpl_review_meta['position'] ?? '';
+				$css_class       = $tpl_review_meta['css_class'] ?? '';
 			}
 
 			$i = 0;

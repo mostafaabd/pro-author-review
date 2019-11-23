@@ -21,7 +21,7 @@ if ( ! class_exists( 'PRO_Author_Review_Metabox' ) ) {
 			global $pagenow, $post;
 			$suffix       = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 			$options      = par_wp_review_option();
-			$posts_type   = isset( $options['post_type'] ) ? $options['post_type'] : array( 'post' );
+			$posts_type   = $options['post_type'] ?? array( 'post' );
 			$posts_type[] = 'parreview';
 			if ( ! empty( $pagenow ) && 'post-new.php' === $pagenow || 'post.php' === $pagenow ) {
 				if ( in_array( $post->post_type, $posts_type, true ) ) {
@@ -46,7 +46,7 @@ if ( ! class_exists( 'PRO_Author_Review_Metabox' ) ) {
 
 		function add_review_meta_box() {
 			$options    = par_wp_review_option();
-			$posts_type = isset( $options['post_type'] ) ? $options['post_type'] : array( 'post' );
+			$posts_type = $options['post_type'] ?? array( 'post' );
 
 			// Add Metabox for custom post type review
 			add_meta_box(
@@ -82,13 +82,13 @@ if ( ! class_exists( 'PRO_Author_Review_Metabox' ) ) {
 			$criteria_fields = get_post_meta( $post->ID, $pra_author_review::CRITERIA_FIELDS, true );
 			$total           = get_post_meta( $post->ID, $pra_author_review::TOTAL_REVIEW_KEY, true );
 
-			$who_can_review   = isset( $wp_review_meta['who_can_review'] ) ? $wp_review_meta['who_can_review'] : 'both';
-			$review_type      = isset( $wp_review_meta['type'] ) ? $wp_review_meta['type'] : 'star';
-			$currentposition  = isset( $wp_review_meta['position'] ) ? $wp_review_meta['position'] : '';
-			$css_class        = isset( $wp_review_meta['css_class'] ) ? $wp_review_meta['css_class'] : '';
-			$review_title     = isset( $wp_review_meta['title'] ) ? $wp_review_meta['title'] : '';
-			$text_under_total = isset( $wp_review_meta['text_under_total'] ) ? $wp_review_meta['text_under_total'] : '';
-			$total            = ( $total ) ? absint( $total ) : 0;
+			$who_can_review   = $wp_review_meta['who_can_review'] ?? 'both';
+			$review_type      = $wp_review_meta['type'] ?? 'star';
+			$currentposition  = $wp_review_meta['position'] ?? '';
+			$css_class        = $wp_review_meta['css_class'] ?? '';
+			$review_title     = $wp_review_meta['title'] ?? '';
+			$text_under_total = $wp_review_meta['text_under_total'] ?? '';
+			$total            = absint( $total ) ?? 0;
 			// Output HTML MetaBox
 			$output  = '<div id="pro-author-review-box" class="pro-author-review-box">';
 			$output .= wp_nonce_field( 'par_post_review_tpl_nonce_action', 'par_post_review_tpl_nonce_name', true, false );
@@ -166,14 +166,14 @@ if ( ! class_exists( 'PRO_Author_Review_Metabox' ) ) {
 			$wp_review_meta  = get_post_meta( $post->ID, $pra_author_review::REVIEW_KEY, true );
 			$criteria_fields = get_post_meta( $post->ID, $pra_author_review::CRITERIA_FIELDS, true );
 			$total           = get_post_meta( $post->ID, $pra_author_review::TOTAL_REVIEW_KEY, true );
-			$current_tpl     = isset( $wp_review_meta['tpl'] ) ? absint( $wp_review_meta['tpl'] ) : '';
+			$current_tpl     = absint( $wp_review_meta['tpl'] ) ?? '';
 
 			// get this values from template
 			if ( ! empty( $current_tpl ) ) {
 				$tpl_review_meta = get_post_meta( $current_tpl, $pra_author_review::REVIEW_KEY, true );
-				$who_can_review  = isset( $tpl_review_meta['who_can_review'] ) ? $tpl_review_meta['who_can_review'] : 'authoronly';
-				$review_type     = isset( $tpl_review_meta['type'] ) ? $tpl_review_meta['type'] : 'percent';
-				$currentposition = isset( $tpl_review_meta['position'] ) ? $tpl_review_meta['position'] : '';
+				$who_can_review  = $tpl_review_meta['who_can_review'] ?? 'authoronly';
+				$review_type     = $tpl_review_meta['type'] ?? 'percent';
+				$currentposition = $tpl_review_meta['position'] ?? '';
 
 				if ( 'author' === $who_can_review ) {
 					$who_can_review_title = esc_html__( 'Author only', 'pro-author-review' );
@@ -184,15 +184,15 @@ if ( ! class_exists( 'PRO_Author_Review_Metabox' ) ) {
 				}
 			}
 
-			$has_review       = isset( $has_review ) ? $has_review : false;
-			$review_title     = isset( $wp_review_meta['title'] ) ? $wp_review_meta['title'] : '';
-			$text_under_total = isset( $wp_review_meta['text_under_total'] ) ? $wp_review_meta['text_under_total'] : '';
+			$has_review       = $has_review ?? false;
+			$review_title     = $wp_review_meta['title'] ?? '';
+			$text_under_total = $wp_review_meta['text_under_total'] ?? '';
 			$total            = ( $total ) ? absint( $total ) : '';
-			$description      = isset( $wp_review_meta['description'] ) ? $wp_review_meta['description'] : '';
-			$pros             = isset( $wp_review_meta['pros'] ) ? $wp_review_meta['pros'] : '';
-			$cons             = isset( $wp_review_meta['cons'] ) ? $wp_review_meta['cons'] : '';
-			$aff_txt          = isset( $wp_review_meta['aff_txt'] ) ? $wp_review_meta['aff_txt'] : '';
-			$aff_url          = isset( $wp_review_meta['aff_url'] ) ? $wp_review_meta['aff_url'] : '';
+			$description      = $wp_review_meta['description'] ?? '';
+			$pros             = $wp_review_meta['pros'] ?? '';
+			$cons             = $wp_review_meta['cons'] ?? '';
+			$aff_txt          = $wp_review_meta['aff_txt'] ?? '';
+			$aff_url          = $wp_review_meta['aff_url'] ?? '';
 
 			// get templates
 			$query_args = array(
@@ -300,9 +300,9 @@ if ( ! class_exists( 'PRO_Author_Review_Metabox' ) ) {
 
 					if ( ! empty( $tpl_id ) ) {
 						$tpl_review_meta = get_post_meta( $tpl_id, $pra_author_review::REVIEW_KEY, true );
-						$who_can_review  = isset( $tpl_review_meta['who_can_review'] ) ? $tpl_review_meta['who_can_review'] : 'authoronly';
-						$review_type     = isset( $tpl_review_meta['type'] ) ? $tpl_review_meta['type'] : 'percent';
-						$currentposition = isset( $tpl_review_meta['position'] ) ? $tpl_review_meta['position'] : '';
+						$who_can_review  = $tpl_review_meta['who_can_review'] ?? 'authoronly';
+						$review_type     = $tpl_review_meta['type'] ?? 'percent';
+						$currentposition = $tpl_review_meta['position'] ?? '';
 
 						if ( 'both' === $who_can_review ) {
 							$who_can_review_title = esc_html__( 'Author review and users rate', 'pro-author-review' );
@@ -315,9 +315,9 @@ if ( ! class_exists( 'PRO_Author_Review_Metabox' ) ) {
 
 					$wp_review_meta   = get_post_meta( get_the_ID(), $pra_author_review::REVIEW_KEY, true );
 					$criteria_fields  = get_post_meta( get_the_ID(), $pra_author_review::CRITERIA_FIELDS, true );
-					$review_title     = isset( $wp_review_meta['title'] ) ? $wp_review_meta['title'] : '';
-					$text_under_total = isset( $wp_review_meta['text_under_total'] ) ? $wp_review_meta['text_under_total'] : '';
-					$review_desc      = isset( $wp_review_meta['review_desc'] ) ? $wp_review_meta['review_desc'] : '';
+					$review_title     = $wp_review_meta['title'] ?? '';
+					$text_under_total = $wp_review_meta['text_under_total'] ?? '';
+					$review_desc      = $wp_review_meta['review_desc'] ?? '';
 
 					$output  = self::who_can_review_field( $who_can_review_title, $css = $who_can_review );
 					$output .= self::get_review_type_field( $review_type );
