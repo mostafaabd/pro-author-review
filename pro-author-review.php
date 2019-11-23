@@ -2,7 +2,7 @@
 /*------------------------------------------------------------------------------
 Plugin Name: Pro Author Review
 Description: Allows a post author or users to rate posts.
-Version:     1.0
+Version:     1.1
 Author:      Mostafa Abdallah
 Author URI:  https://mostafaa.net/
 License:     GPL v2 or later
@@ -27,7 +27,7 @@ along with Pro Author Review. If not, see https://www.gnu.org/licenses/gpl-2.0.h
 // exit if file is called directly
 defined( 'ABSPATH' ) || exit;
 
-const PRO_AR_VERSION          = '1.0';
+const PRO_AR_VERSION          = '1.1';
 const PRO_AR_DB_VERSION       = '1.0';
 const PRO_AR_USERS_RATE_TABLE = 'pro_user_rates';
 define( 'PRO_AR_URI', plugins_url( '', __FILE__ ) );
