@@ -285,7 +285,6 @@ if ( ! class_exists( 'Pro_Author_Review' ) ) {
 		 * @return array.
 		 */
 		function get_post_review_data( $post_id = null ) {
-			global $par_users_rate;
 
 			if ( ! $post_id ) {
 				$post_id = get_the_ID();
@@ -371,9 +370,9 @@ if ( ! class_exists( 'Pro_Author_Review' ) ) {
 
 			if ( 'both' === $who_can_review || 'users' === $who_can_review ) {
 				$plugin_options        = par_wp_review_option();
-				$users_avg_rating      = get_post_meta( get_the_ID(), $par_users_rate::AVG_RATING, true );
-				$num_of_users          = get_post_meta( get_the_ID(), $par_users_rate::TOTAL_USERS, true );
-				$users_criteria_fields = get_post_meta( get_the_ID(), $par_users_rate::CRITERIA_FIELDS, true );
+				$users_avg_rating      = get_post_meta( get_the_ID(), Pro_Users_Rate::AVG_RATING, true );
+				$num_of_users          = get_post_meta( get_the_ID(), Pro_Users_Rate::TOTAL_USERS, true );
+				$users_criteria_fields = get_post_meta( get_the_ID(), Pro_Users_Rate::CRITERIA_FIELDS, true );
 
 				if ( 'star' === $review_type ) {
 					$users_avg_rating = par_convert_percent_to_star( $users_avg_rating );
