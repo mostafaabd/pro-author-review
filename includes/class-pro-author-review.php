@@ -37,6 +37,7 @@ if ( ! class_exists( 'Pro_Author_Review' ) ) {
 		 */
 		public static function register() {
 			$plugin = new self();
+			error_log( 'This is register function' );
 			add_action( 'init', array( $plugin, 'init' ) );
 			add_action( 'init', array( $plugin, 'add_thumbnail_size' ) );
 			add_action( 'init', array( $plugin, 'register_cutom_review_post_type' ) );

@@ -28,7 +28,15 @@ if ( ! class_exists( 'Pro_Users_Rate' ) ) {
 		const CRITERIA_FIELDS = '_par_post_users_criteria_fields';
 
 		function __construct() {
-			add_action( 'init', array( $this, 'init' ) );
+
+		}
+
+		/**
+		 * Registers our plugin with WordPress.
+		 */
+		public static function register() {
+			$plugin = new self();
+			add_action( 'init', array( $plugin, 'init' ) );
 		}
 
 		function init() {
@@ -443,6 +451,5 @@ if ( ! class_exists( 'Pro_Users_Rate' ) ) {
 
 	} // EOF Class
 
-	global $par_users_rate;
-	$par_users_rate = new Pro_Users_Rate();
+	Pro_Users_Rate::register();
 }
