@@ -37,7 +37,6 @@ if ( ! class_exists( 'Pro_Author_Review' ) ) {
 		 */
 		public static function register() {
 			$plugin = new self();
-			error_log( 'This is register function' );
 			add_action( 'init', array( $plugin, 'init' ) );
 			add_action( 'init', array( $plugin, 'add_thumbnail_size' ) );
 			add_action( 'init', array( $plugin, 'register_cutom_review_post_type' ) );
@@ -439,11 +438,11 @@ if ( ! class_exists( 'Pro_Author_Review' ) ) {
 				$par_post_review_data = $this->get_post_review_data( $post_id );
 
 				if ( 'percent' === $par_post_review_data['review_type'] ) {
-					return $this->get_template( 'percent.php' );
+					return $this->get_template( 'percent.php', $par_post_review_data );
 				} elseif ( 'point' === $par_post_review_data['review_type'] ) {
-					return $this->get_template( 'point.php' );
+					return $this->get_template( 'point.php', $par_post_review_data );
 				} else {
-					return $this->get_template( 'star.php' );
+					return $this->get_template( 'star.php', $par_post_review_data );
 				}
 			}
 
@@ -456,7 +455,7 @@ if ( ! class_exists( 'Pro_Author_Review' ) ) {
 		 * @since  1.0
 		 * @return HTML for author review box.
 		 */
-		function get_template( $template_name ) {
+		function get_template( $template_name, $post_review_data ) {
 
 			if ( empty( $template_name ) ) {
 				return;

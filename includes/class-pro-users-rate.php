@@ -425,7 +425,9 @@ if ( ! class_exists( 'Pro_Users_Rate' ) ) {
 		 * @return type string HTML for rate.
 		 */
 		function get_users_rate_template() {
-			$located = par_author_review_get_template( 'users-rate-template.php' );
+			$post_review_data = new Pro_Author_Review();
+			$post_review_data = $post_review_data->get_post_review_data();
+			$located          = par_author_review_get_template( 'users-rate-template.php' );
 			ob_start();
 			require( $located );
 			$content = ob_get_clean();

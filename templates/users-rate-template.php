@@ -9,10 +9,9 @@
 
 defined( 'ABSPATH' ) || exit;
 
-global $par_post_review_data;
 $par_users_rate = new Pro_Users_Rate();
 
-extract( $par_post_review_data ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
+extract( $post_review_data ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 
 ?>
 

@@ -11,9 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-global $par_post_review_data;
+//global $par_post_review_data;
 
-extract( $par_post_review_data ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
+extract( $post_review_data ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 
 $css_classes = 'pro-author-review' . ' review-' . $review_position . ' ' . $review_type;
 
@@ -39,7 +39,7 @@ if ( ! empty( $css_class ) ) {
 
 			<?php
 			if ( 'users' === $who_can_review || 'both' === $who_can_review ) {
-				par_tpl_review_buttons( $par_post_review_data );
+				par_tpl_review_buttons( $post_review_data );
 			}
 			?>
 
@@ -61,9 +61,9 @@ if ( ! empty( $css_class ) ) {
 		}
 
 		echo '</div>';
-		par_tpl_review_summry( $par_post_review_data );
-		par_tpl_pros_cons( $par_post_review_data );
-		par_tpl_affiliate( $par_post_review_data );
+		par_tpl_review_summry( $post_review_data );
+		par_tpl_pros_cons( $post_review_data );
+		par_tpl_affiliate( $post_review_data );
 		?>
 	</div>
 </div>
