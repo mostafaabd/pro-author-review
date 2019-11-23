@@ -10,38 +10,18 @@ if ( ! function_exists( 'par_post_has_review' ) ) {
 	 * @return Boolean.
 	 */
 	function par_post_has_review( $post_id = null ) {
-		if ( ! $post_id ) {
-			$post_id = get_the_ID();
-		} else {
-			$post_id = absint( $post_id );
-		}
+		$post_review = new Pro_Author_Review();
 
-		$has_review = get_post_meta( $post_id, '_par_post_has_review', true );
-		if ( isset( $has_review ) && $has_review ) {
-			return true;
-		} else {
-			return false;
-		}
+		return $post_review->has_review( $post_id );
 	}
 }
 
 if ( ! function_exists( 'par_get_post_review_data' ) ) {
 
 	function par_get_post_review_data( $post_id = null ) {
-		if ( ! $post_id ) {
-			$post_id = get_the_ID();
-		} else {
-			$post_id = absint( $post_id );
-		}
-
-		if ( empty( $post_id ) ) {
-			return;
-		}
-
 		$review_data = new Pro_Author_Review();
-		$review_data = $review_data->get_post_review_data( $post_id );
 
-		return $review_data;
+		return $review_data->get_post_review_data( $post_id );
 	}
 }
 

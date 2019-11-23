@@ -290,7 +290,7 @@ if ( ! class_exists( 'Pro_Author_Review' ) ) {
 			if ( ! $post_id ) {
 				$post_id = get_the_ID();
 			} else {
-				$post_id = $post_id;
+				$post_id = absint( $post_id );
 			}
 
 			$author_review_meta     = get_post_meta( $post_id, self::REVIEW_KEY, true );
