@@ -72,15 +72,16 @@ if ( ! class_exists( 'PRO_Author_Review_Metabox' ) ) {
 		}
 
 		function review_template_meta_box() {
-			global $post, $pra_author_review;
+			global $post;
 
+			$pra_author_review    = new Pro_Author_Review();
 			$get_review_types     = $pra_author_review->review_type();
 			$get_review_positions = $pra_author_review->review_position_type();
 			$get_who_can_review   = $pra_author_review->who_can_review();
 
-			$wp_review_meta  = get_post_meta( $post->ID, $pra_author_review::REVIEW_KEY, true );
-			$criteria_fields = get_post_meta( $post->ID, $pra_author_review::CRITERIA_FIELDS, true );
-			$total           = get_post_meta( $post->ID, $pra_author_review::TOTAL_REVIEW_KEY, true );
+			$wp_review_meta  = get_post_meta( $post->ID, Pro_Author_Review::REVIEW_KEY, true );
+			$criteria_fields = get_post_meta( $post->ID, Pro_Author_Review::CRITERIA_FIELDS, true );
+			$total           = get_post_meta( $post->ID, Pro_Author_Review::TOTAL_REVIEW_KEY, true );
 
 			$who_can_review   = $wp_review_meta['who_can_review'] ?? 'both';
 			$review_type      = $wp_review_meta['type'] ?? 'star';
@@ -157,20 +158,20 @@ if ( ! class_exists( 'PRO_Author_Review_Metabox' ) ) {
 		}
 
 		function review_meta_box() {
-			global $post, $pra_author_review;
+			global $post;
 
 			$who_can_review  = '';
 			$review_type     = '';
 			$currentposition = '';
-			$has_review      = get_post_meta( $post->ID, $pra_author_review::HAS_REVIEW, true );
-			$wp_review_meta  = get_post_meta( $post->ID, $pra_author_review::REVIEW_KEY, true );
-			$criteria_fields = get_post_meta( $post->ID, $pra_author_review::CRITERIA_FIELDS, true );
-			$total           = get_post_meta( $post->ID, $pra_author_review::TOTAL_REVIEW_KEY, true );
-			$current_tpl     = absint( $wp_review_meta['tpl'] ) ?? '';
+			$has_review      = get_post_meta( $post->ID, Pro_Author_Review::HAS_REVIEW, true );
+			$wp_review_meta  = get_post_meta( $post->ID, Pro_Author_Review::REVIEW_KEY, true );
+			$criteria_fields = get_post_meta( $post->ID, Pro_Author_Review::CRITERIA_FIELDS, true );
+			$total           = get_post_meta( $post->ID, Pro_Author_Review::TOTAL_REVIEW_KEY, true );
+			$current_tpl     = $wp_review_meta['tpl'] ?? '';
 
 			// get this values from template
 			if ( ! empty( $current_tpl ) ) {
-				$tpl_review_meta = get_post_meta( $current_tpl, $pra_author_review::REVIEW_KEY, true );
+				$tpl_review_meta = get_post_meta( $current_tpl, Pro_Author_Review::REVIEW_KEY, true );
 				$who_can_review  = $tpl_review_meta['who_can_review'] ?? 'authoronly';
 				$review_type     = $tpl_review_meta['type'] ?? 'percent';
 				$currentposition = $tpl_review_meta['position'] ?? '';
@@ -296,10 +297,9 @@ if ( ! class_exists( 'PRO_Author_Review_Metabox' ) ) {
 
 				while ( $query->have_posts() ) {
 					$query->the_post();
-					global $pra_author_review;
 
 					if ( ! empty( $tpl_id ) ) {
-						$tpl_review_meta = get_post_meta( $tpl_id, $pra_author_review::REVIEW_KEY, true );
+						$tpl_review_meta = get_post_meta( $tpl_id, Pro_Author_Review::REVIEW_KEY, true );
 						$who_can_review  = $tpl_review_meta['who_can_review'] ?? 'authoronly';
 						$review_type     = $tpl_review_meta['type'] ?? 'percent';
 						$currentposition = $tpl_review_meta['position'] ?? '';
@@ -313,8 +313,8 @@ if ( ! class_exists( 'PRO_Author_Review_Metabox' ) ) {
 						}
 					}
 
-					$wp_review_meta   = get_post_meta( get_the_ID(), $pra_author_review::REVIEW_KEY, true );
-					$criteria_fields  = get_post_meta( get_the_ID(), $pra_author_review::CRITERIA_FIELDS, true );
+					$wp_review_meta   = get_post_meta( get_the_ID(), Pro_Author_Review::REVIEW_KEY, true );
+					$criteria_fields  = get_post_meta( get_the_ID(), Pro_Author_Review::CRITERIA_FIELDS, true );
 					$review_title     = $wp_review_meta['title'] ?? '';
 					$text_under_total = $wp_review_meta['text_under_total'] ?? '';
 					$review_desc      = $wp_review_meta['review_desc'] ?? '';
@@ -353,7 +353,7 @@ if ( ! class_exists( 'PRO_Author_Review_Metabox' ) ) {
 		}
 
 		function save_review_meta_data( $post_id, $post ) {
-			global $pra_author_review;
+
 			$is_review_template = true;
 
 			// verify nonce
@@ -380,10 +380,10 @@ if ( ! class_exists( 'PRO_Author_Review_Metabox' ) ) {
 
 			// metabox Data Validation before save in database
 			if ( ! $is_review_template ) {
-				$has_review = $_POST[ $pra_author_review::HAS_REVIEW ];
+				$has_review = $_POST[ Pro_Author_Review::HAS_REVIEW ];
 				$has_review = ( isset( $has_review ) && '1' === $has_review ) ? true : false;
 			}
-			$new                     = $_POST[ $pra_author_review::REVIEW_KEY ];
+			$new                     = $_POST[ Pro_Author_Review::REVIEW_KEY ];
 			$new['title']            = ( isset( $new['title'] ) ) ? sanitize_text_field( $new['title'] ) : '';
 			$new['text_under_total'] = ( isset( $new['text_under_total'] ) ) ? sanitize_text_field( $new['text_under_total'] ) : '';
 
@@ -431,18 +431,18 @@ if ( ! class_exists( 'PRO_Author_Review_Metabox' ) ) {
 			}
 
 			$total_author_review = $this->calculate_total_author_review( $items_review );
-			update_post_meta( $post_id, $pra_author_review::CRITERIA_FIELDS, $items_review );
-			update_post_meta( $post_id, $pra_author_review::TOTAL_REVIEW_KEY, $total_author_review );
-			update_post_meta( $post_id, $pra_author_review::REVIEW_KEY, $new );
+			update_post_meta( $post_id, Pro_Author_Review::CRITERIA_FIELDS, $items_review );
+			update_post_meta( $post_id, Pro_Author_Review::TOTAL_REVIEW_KEY, $total_author_review );
+			update_post_meta( $post_id, Pro_Author_Review::REVIEW_KEY, $new );
 
 			if ( ! $is_review_template && $has_review ) {
-				update_post_meta( $post_id, $pra_author_review::HAS_REVIEW, $has_review );
+				update_post_meta( $post_id, Pro_Author_Review::HAS_REVIEW, $has_review );
 			} elseif ( ! $is_review_template && ! $has_review ) {
 				// need to users rate post from database
-				delete_post_meta( $post_id, $pra_author_review::HAS_REVIEW );
-				delete_post_meta( $post_id, $pra_author_review::CRITERIA_FIELDS, $items_review );
-				delete_post_meta( $post_id, $pra_author_review::TOTAL_REVIEW_KEY, $total_author_review );
-				delete_post_meta( $post_id, $pra_author_review::REVIEW_KEY, $new );
+				delete_post_meta( $post_id, Pro_Author_Review::HAS_REVIEW );
+				delete_post_meta( $post_id, Pro_Author_Review::CRITERIA_FIELDS, $items_review );
+				delete_post_meta( $post_id, Pro_Author_Review::TOTAL_REVIEW_KEY, $total_author_review );
+				delete_post_meta( $post_id, Pro_Author_Review::REVIEW_KEY, $new );
 			}
 
 		}

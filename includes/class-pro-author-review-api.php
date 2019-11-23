@@ -19,7 +19,7 @@ if ( ! class_exists( 'Pro_Author_Review_API' ) ) {
 				$post_types,
 				'par_post_has_review',
 				array(
-					'get_callback' => array( $this, 'get_post_has_review' )
+					'get_callback' => array( $this, 'get_post_has_review' ),
 				)
 			);
 

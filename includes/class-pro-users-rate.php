@@ -138,7 +138,7 @@ if ( ! class_exists( 'Pro_Users_Rate' ) ) {
 		 * @return array for ajax response.
 		 */
 		function add_user_rate_to_post( $post_id, $user_individual_criteria ) {
-			global $pra_author_review, $wpdb;
+			global $wpdb;
 			/*
 			* this $args array return when user add rate success or false
 			*/
@@ -358,11 +358,10 @@ if ( ! class_exists( 'Pro_Users_Rate' ) ) {
 		 * @return type array all slug of criteria to rate by user .
 		 */
 		function get_post_criteria_slug_name( $post_id ) {
-			global $pra_author_review;
 
 			$slugs           = array();
 			$names           = array();
-			$criteria_fields = get_post_meta( $post_id, $pra_author_review::CRITERIA_FIELDS, true );
+			$criteria_fields = get_post_meta( $post_id, Pro_Author_Review::CRITERIA_FIELDS, true );
 			foreach ( $criteria_fields as $review ) {
 					$slugs[] = $review['slug'];
 					$names[] = array(

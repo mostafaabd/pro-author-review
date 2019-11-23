@@ -29,19 +29,27 @@ if ( ! class_exists( 'Pro_Author_Review' ) ) {
 		const TOTAL_REVIEW_KEY = '_par_post_total_author_review';
 
 		function __construct() {
-			add_action( 'init', array( $this, 'init' ) );
-			add_action( 'init', array( $this, 'add_thumbnail_size' ) );
-			add_action( 'init', array( $this, 'register_cutom_review_post_type' ) );
+
 		}
 
-		function init() {
+		/**
+		 * Registers our plugin with WordPress.
+		 */
+		public static function register() {
+			$plugin = new self();
+			add_action( 'init', array( $plugin, 'init' ) );
+			add_action( 'init', array( $plugin, 'add_thumbnail_size' ) );
+			add_action( 'init', array( $plugin, 'register_cutom_review_post_type' ) );
+		}
+
+		public function init() {
 			load_plugin_textdomain( 'pro-author-review', false, PRO_AR_URI . '/languages/' );
-			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts_styles' ), 500 );
+			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts_styles' ), 10 );
 			add_filter( 'the_content', array( $this, 'add_author_review_to_content' ) );
 			add_action( 'wp_footer', array( $this, 'output_rating_schema_js' ) );
 		}
 
-		function add_thumbnail_size() {
+		public function add_thumbnail_size() {
 			add_image_size( 'par-thumb', 72, 72, true );
 		}
 
@@ -50,7 +58,7 @@ if ( ! class_exists( 'Pro_Author_Review' ) ) {
 		 * @since 1.0
 		 * @return void
 		 */
-		function register_cutom_review_post_type() {
+		public function register_cutom_review_post_type() {
 
 			$labels = array(
 				'name'               => esc_html_x( 'Review', 'post type general name', 'pro-author-review' ),
@@ -509,6 +517,7 @@ if ( ! class_exists( 'Pro_Author_Review' ) ) {
 			}
 		}
 	}
-	global $pra_author_review;
-	$pra_author_review = new Pro_Author_Review();
+	Pro_Author_Review::register();
+	//global $pra_author_review;
+	//$pra_author_review = new Pro_Author_Review();
 }
